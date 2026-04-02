@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bookmark Sync</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="popup-page">
+    <div class="popup-container">
+
+      <!-- Header -->
+      <div class="header">
+        <h1>🔖 Bookmark Sync</h1>
+        <div class="header-actions">
+          <button class="icon-button" id="exportBtn" title="Export bookmarks as HTML">⬇️</button>
+          <button class="icon-button" id="themeToggle" title="Toggle theme">🌙</button>
+          <button class="icon-button" id="openSettings" title="Settings">⚙️</button>
+        </div>
+      </div>
+
+      <!-- Status -->
+      <div class="status-section">
+        <p class="status-message" id="statusMessage">Loading...</p>
+        <p class="last-sync" id="lastSync"></p>
+      </div>
+
+      <!-- Search -->
+      <div class="search-section">
+        <span class="search-icon">🔍</span>
+        <div class="search-input-wrap">
+          <input
+            class="search-input"
+            id="searchInput"
+            type="text"
+            placeholder="Search bookmarks..."
+            autocomplete="off"
+            autofocus
+          />
+          <button class="search-clear" id="searchClear" hidden title="Clear search">✕</button>
+        </div>
+        <button class="btn btn-primary" id="syncBtn" title="Sync now">🔄</button>
+      </div>
+
+      <!-- Breadcrumb (browse mode only) -->
+      <nav class="breadcrumb" id="breadcrumb" aria-label="Folder path"></nav>
+
+      <!-- Version banner (shown when viewing a snapshot or all-versions mode) -->
+      <div class="version-banner" id="versionBanner" hidden></div>
+
+      <!-- Results heading: count + timeline + profile switcher -->
+      <div class="results-heading">
+        <span class="results-meta" id="resultsMeta"></span>
+        <div class="heading-selects">
+          <select class="popup-filter-select" id="versionFilter" title="Timeline">
+            <option value="current">Current</option>
+          </select>
+          <select class="popup-filter-select" id="profileFilter" title="Switch profile">
+            <option value="">Loading profiles...</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Results list -->
+      <div class="results-section">
+        <div class="results-list" id="resultsList"></div>
+      </div>
+
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

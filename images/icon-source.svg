@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- Background -->
+  <rect width="128" height="128" rx="28" ry="28" fill="#111318"/>
+
+  <!-- Bookmark ribbon with gradient -->
+  <defs>
+    <linearGradient id="bmGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A287FF"/>
+      <stop offset="100%" stop-color="#8E6FF0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Bookmark shape: rectangle + V-notch polygon -->
+  <polygon
+    points="
+      35.8,17.9
+      92.2,17.9
+      92.2,107.5
+      64,89.1
+      35.8,107.5
+    "
+    fill="url(#bmGrad)"
+  />
+
+  <!-- Sheen highlight near top -->
+  <rect x="39" y="24" width="50" height="6" rx="2" fill="white" opacity="0.12"/>
+</svg>
