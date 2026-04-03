@@ -72,9 +72,10 @@ In the popup, use the **timeline dropdown** to:
 | File | Purpose |
 |------|---------|
 | `manifest.json` | Extension manifest (MV3) |
-| `background.js` | Service worker — GitHub API, sync logic, history management |
-| `popup.html/js` | Search & browse UI |
-| `options.html/js` | Settings page |
-| `styles.css` | Shared styles (dark + light theme) |
-| `images/` | Extension icons (16, 48, 128 px) |
+| `src/background/background.js` | Service worker — GitHub API, sync logic, history management |
+| `src/popup/popup.html` | Search & browse UI |
+| `src/options/options.html` | Settings page |
+| `src/styles/styles.css` | Shared styles (dark + light theme) |
+| `assets/icons/` | Extension icons (16, 48, 128 px) |
 | `generate-icons.js` | Script used to generate the PNG icons from scratch |
+| `PRIVACY_POLICY.md` | Privacy Policy for Chrome Web Store registration |
