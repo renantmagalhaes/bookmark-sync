@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Bookmark Sync",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Save and search your bookmarks via a private GitHub repository",
   "permissions": [
     "storage",
