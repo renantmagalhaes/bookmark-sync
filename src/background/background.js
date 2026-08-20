@@ -77,6 +77,20 @@ async function handleMessage(request) {
       return { success: true, data: result.data };
     }
 
+    // Fetch a version's tree by its history-index id (resolves the file for us).
+    case "fetchVersionTree": {
+      const pKey = request.profileKey || (await getProfileKey());
+      const idxResult = await fetchGitHubJson(historyIndexPath(pKey));
+      if (!idxResult.exists) return { success: false, error: "No history for this profile" };
+      const versions = idxResult.data.versions || [];
+      const version = versions.find((v) => v.id === request.versionId);
+      if (!version) return { success: false, error: "Version not found" };
+      const vPath = `bookmarks/${pKey}/history/${version.file}`;
+      const result = await fetchGitHubJson(vPath);
+      if (!result.exists) return { success: false, error: "Version not found" };
+      return { success: true, data: result.data };
+    }
+
     default:
       return { success: false, error: "Unknown action" };
   }

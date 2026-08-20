@@ -1075,6 +1075,11 @@ document.getElementById("openSettings").addEventListener("click", () => {
   chrome.runtime.openOptionsPage();
 });
 
+// Open the version diff page
+document.getElementById("openDiff").addEventListener("click", () => {
+  chrome.tabs.create({ url: chrome.runtime.getURL("src/diff/diff.html") });
+});
+
 // Manual sync (only syncs own profile)
 const syncBtn = document.getElementById("syncBtn");
 syncBtn.addEventListener("click", async () => {

@@ -9,6 +9,7 @@ A Chrome extension that syncs your bookmarks to a private GitHub repository — 
 - **Sync to GitHub** — saves your full bookmark tree (folders + bookmarks) to a private repo on a schedule or on demand
 - **Multi-device profiles** — each device writes to its own folder; switch between profiles in the popup to browse any device's bookmarks
 - **Version history** — every sync that detects a change snapshots the previous state; browse and search across historical versions
+- **Version diff** — a dedicated page that compares any two versions of a profile and shows exactly which bookmarks were added, removed, or changed
 - **Search** — fuzzy multi-token search across title, URL, and folder path; results ranked by relevance
 - **Folder navigation** — browse the full folder tree with breadcrumbs; click any path segment in search results to jump directly to that folder
 - **Export** — download your bookmarks as a Netscape HTML file (importable in any browser)
@@ -65,6 +66,16 @@ In the popup, use the **timeline dropdown** to:
 | All versions | Search across every version; removed bookmarks shown with a 🗑️ badge |
 | A specific date | Browse and search that snapshot; export it as HTML |
 
+## Version Diff
+
+To see **what changed** between two versions at a glance, open the **Compare Versions** page (🔀 in the popup header, or the *Compare Versions* button in Settings).
+
+1. Pick a **profile**.
+2. Pick a **base** version (older) and a **compare** version (newer).
+3. Click **Compare**.
+
+The page groups the differences into **Added**, **Removed**, and **Changed** sections, with a summary bar showing the counts. Changed bookmarks show the old → new title and folder path inline, and every row has an **Open** button to jump to the URL.
+
 ---
 
 ## Files
@@ -75,6 +86,7 @@ In the popup, use the **timeline dropdown** to:
 | `src/background/background.js` | Service worker — GitHub API, sync logic, history management |
 | `src/popup/popup.html` | Search & browse UI |
 | `src/options/options.html` | Settings page |
+| `src/diff/diff.html` | Version diff page (compare two snapshots) |
 | `src/styles/styles.css` | Shared styles (dark + light theme) |
 | `assets/icons/` | Extension icons (16, 48, 128 px) |
 | `generate-icons.js` | Script used to generate the PNG icons from scratch |

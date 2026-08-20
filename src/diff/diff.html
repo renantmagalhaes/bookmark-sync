@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark Sync — Version Diff</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+  </head>
+  <body>
+    <div class="diff-container">
+
+      <!-- Header -->
+      <div class="diff-header">
+        <div class="diff-header-title">
+          <h1>🔖 Version Diff</h1>
+          <p class="diff-subtitle">Compare two snapshots of a profile's bookmarks</p>
+        </div>
+        <div class="diff-header-actions">
+          <button class="icon-button" id="themeToggle" title="Toggle theme">🌙</button>
+          <button class="icon-button" id="closeBtn" title="Close">✕</button>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="diff-controls">
+        <div class="diff-control-group">
+          <label for="diffProfile">Profile</label>
+          <select id="diffProfile" class="diff-select">
+            <option value="">Loading profiles...</option>
+          </select>
+        </div>
+
+        <div class="diff-control-group">
+          <label for="diffBase">Base (older)</label>
+          <select id="diffBase" class="diff-select">
+            <option value="">Select base version</option>
+          </select>
+        </div>
+
+        <div class="diff-control-group">
+          <label for="diffCompare">Compare (newer)</label>
+          <select id="diffCompare" class="diff-select">
+            <option value="">Select compare version</option>
+          </select>
+        </div>
+
+        <button class="btn btn-primary" id="diffRun" disabled>Compare</button>
+      </div>
+
+      <!-- Summary -->
+      <div class="diff-summary" id="diffSummary" hidden></div>
+
+      <!-- Results -->
+      <div class="diff-results" id="diffResults"></div>
+
+    </div>
+    <script src="diff.js"></script>
+  </body>
+</html>

@@ -262,6 +262,10 @@ document.getElementById("showToken").addEventListener("change", (e) => {
 document.getElementById("testConnection").addEventListener("click", testConnection);
 document.getElementById("syncNow").addEventListener("click", syncNow);
 
+document.getElementById("openDiff").addEventListener("click", () => {
+  chrome.tabs.create({ url: chrome.runtime.getURL("src/diff/diff.html") });
+});
+
 document.getElementById("profileName").addEventListener("input", syncProfileKeyFromName);
 
 document.getElementById("profileKey").addEventListener("input", (e) => {
